@@ -169,6 +169,11 @@ export default class WebGL {
                 ease: 'power2.easeOut',
             },
         });
+        tl.to(this.elms.canvas, {
+            duration: 1,
+            ease: 'power2.ease',
+            opacity: 1,
+        });
         tl.to(
             this.elms.mvTitle,
             {
