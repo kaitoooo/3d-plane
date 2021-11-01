@@ -1,0 +1,74 @@
+@use "../global/global" as g;
+
+.area {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+
+    &__img {
+        position: absolute;
+        width: 100%;
+        top: 0;
+
+        &--cloud {
+            z-index: 3;
+        }
+
+        &--cloud2 {
+            z-index: 3;
+            top: auto;
+            bottom: 0;
+        }
+        &--sky {
+            z-index: 2;
+        }
+    }
+
+    &__no-02,
+    &__no-04,
+    &__no-06 {
+        background-color: g.$color-dark-gray;
+    }
+    &__no-01,
+    &__no-03,
+    &__no-05,
+    &__no-07 {
+        @include g.mq(mobile) {
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+    }
+    &__no-01 {
+        @include g.mq(mobile) {
+            background-image: url('../img/sp0.png');
+        }
+    }
+    &__no-03 {
+        @include g.mq(mobile) {
+            background-image: url('../img/sp01.png');
+        }
+    }
+    &__no-05 {
+        @include g.mq(mobile) {
+            background-image: url('../img/sp02.png');
+        }
+    }
+    &__no-07 {
+        @include g.mq(mobile) {
+            background-image: url('../img/sp03.png');
+        }
+    }
+    &__text {
+        position: absolute;
+        bottom: g.get_vw(20);
+        right: g.get_vw(100);
+        font-size: g.get_vw(110);
+        font-family: g.$font-all;
+        color: g.$color-white;
+        @include g.mq(mobile) {
+            bottom: g.get_vw(120);
+            right: g.get_vw(100);
+            font-size: g.get_vw(120);
+        }
+    }
+}
